@@ -53,7 +53,7 @@ async fn consume_and_print(brokers: &str, group_id: &str, topics: &[&str]) {
         .set("session.timeout.ms", "6000")
         .set("enable.auto.commit", "true")
         //.set("statistics.interval.ms", "30000")
-        .set("auto.offset.reset", "smallest")
+        .set("auto.offset.reset", "beginning")
         .set_log_level(RDKafkaLogLevel::Debug)
         .create_with_context(context)
         .expect("Consumer creation failed");
